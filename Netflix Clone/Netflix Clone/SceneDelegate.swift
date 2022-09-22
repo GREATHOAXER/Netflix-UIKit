@@ -14,8 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         //Storyboard가 없기 때문에 윈도우를 코드로 생성해야함
+        //윈도우 -> 앱 안의 모든 뷰를 보여줄 수 있는(관리하는) 일종의 액자 형태
+        //각 기기별로의 WindowScene에는 액정 크기를 나타내줄 수 있는 일종의 좌표(bounds)가 존재함
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         //윈도우를 생성 후, 제일 먼저 실행해야할 뷰 컨트롤러를 설정해야함
